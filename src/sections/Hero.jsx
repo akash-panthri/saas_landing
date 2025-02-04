@@ -1,4 +1,4 @@
-import { Element } from "react-scroll";
+import { Element, Link as LinkScroll } from "react-scroll";
 
 export default function Hero() {
   return (
@@ -16,6 +16,8 @@ export default function Hero() {
               We designed HEBBIAN AI Video Editor to be an easy to use, quick to
               learn, and surprisingly powerful.
             </p>
+            <LinkScroll to="features" offset={-100} spy smooth>
+            </LinkScroll>
           </div>
         </div>
       </Element>
