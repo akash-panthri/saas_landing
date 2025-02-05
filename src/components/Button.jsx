@@ -1,6 +1,9 @@
+import clsx from "clsx";
 
-export default function Button() {
+export default function Button({ icon, children }) {
   return (
-    <div>Button</div>
-  )
+    <button
+      className={clsx("relative p-0.5 g5 rounded-2xl shadow-500 group")}
+    > Button </button>
+  );
 }
