@@ -1,11 +1,21 @@
 import clsx from "clsx";
+import Marker from "./Marker";
 
-export default function Button({ icon, children, href, containerClassName,onClick }) {
-    const Inner = () => (
-        <>
-        <span>
-            <span>Marker</span>
-            {icon && (
+export default function Button({
+  icon,
+  children,
+  href,
+  containerClassName,
+  onClick,
+  markerFill,
+}) {
+  const Inner = () => (
+    <>
+      <span className="relative flex items-center min-h-[60px] px-4 g4 rounded-2xl inner-before group-hover:before:opacity-100 overflow-hidden">
+        <span className="absolute -left-[1px]">
+          <Marker markerFill={markerFill} />
+        </span>
+        {icon && (
           <img
             src={icon}
             alt="circle"
@@ -15,9 +25,9 @@ export default function Button({ icon, children, href, containerClassName,onClic
         <span className="relative z-2 font-poppins base-bold text-p1 uppercase">
           {children}
         </span>
-        </span>
-        
-        </>)
+      </span>
+    </>
+  );
   return href ? (
     <a
       className={clsx(
@@ -26,7 +36,7 @@ export default function Button({ icon, children, href, containerClassName,onClic
       )}
       href={href}
     >
-        <Inner />
+      <Inner />
     </a>
   ) : (
     <button
