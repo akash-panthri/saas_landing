@@ -26,6 +26,7 @@ export default function Button({
           {children}
         </span>
       </span>
+      <span className="glow-before glow-after" />
     </>
   );
   return href ? (
