@@ -1,4 +1,5 @@
 import "./App.css";
+import Features from "./sections/Features";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 export default function App() {
@@ -6,6 +7,7 @@ export default function App() {
     <main className="overflow-hidden">
       <Header />
       <Hero />
+      <Features />
     </main>
   );
 }
