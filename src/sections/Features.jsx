@@ -5,7 +5,7 @@ export default function Features() {
     <section>
       <Element name="features">
         <div className="container">
-          <div className="relative flex"></div>
+          <div className="relative flex">{}</div>
         </div>
       </Element>
     </section>
