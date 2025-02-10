@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import { features } from "../components/constants";
+import { details, features } from "../components/constants";
 import Button from "../components/Button";
 
 export default function Features() {
@@ -13,7 +13,6 @@ export default function Features() {
                 key={id}
                 className="relative z-2 md:px-10 px-5 md:pb-10 pb-5 flex-50 max-md:g7 max-md:border-2 max-md:border-s3 max-md:rounded-3xl max-md:flex-320"
               >
-               
                 <div className="w-full flex justify-start items-start">
                   <div className="-ml-3 mb-12 flex items-center justify-center flex-col">
                     <div className="w-0.5 h-16 bg-s3" />
@@ -33,6 +32,12 @@ export default function Features() {
                 <Button icon={button.icon}>{button.title}</Button>
               </div>
             ))}
+            <ul className="relative flex justify-around flex-grow px-[5%] border-2 border-s3 rounded-7xl max-md:hidden">
+              <div className="absolute bg-s3/20 top-[38%] left-0 right-0 w-full h-[1px] z-10" />
+              {details.map(({ id, icon, title }) => (
+                <div className="absolute top-8 bottom-0 left-1/2 bg-s3/20 w-[1px] h-full z-10" key={id}>{title}</div>
+              ))}
+            </ul>
           </div>
         </div>
       </Element>
