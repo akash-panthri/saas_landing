@@ -1,16 +1,10 @@
-import clsx from "clsx";;
-import { useState,useEffect } from "react";
+import clsx from "clsx";
+import { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
-
-const NavLink = ({ title }) => (
-  <LinkScroll className="base-bold text-p4 uppercase transition-colors duration-1000 cursor-pointer hover:text-p1 max-lg:my-4 ">
-    {title}
-  </LinkScroll>
-);
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const [hasScrolled, setHasScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -23,8 +17,27 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const NavLink = ({ title }) => (
+    <LinkScroll
+      onClick={() => setIsOpen(false)}
+      to={title}
+      offset={-100}
+      spy
+      smooth
+      activeClass="nav-active"
+      className="base-bold text-p4 uppercase transition-colors duration-1000 cursor-pointer hover:text-p1 max-lg:my-4 "
+    >
+      {title}
+    </LinkScroll>
+  );
   return (
-    <header className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4", hasScrolled && "py-2 bg-black-100 backdrop-blur-[8px]",)}>
+    <header
+      className={clsx(
+        "fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4",
+        hasScrolled && "py-2 bg-black-100 backdrop-blur-[8px]"
+      )}
+    >
       <div className="container flex h-14 items-center max-lg:px-5">
         <a href="" className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/hebbian.svg" width={140} height={55} alt="logo" />
@@ -46,7 +59,7 @@ export default function Header() {
                 <li className="nav-logo">
                   <LinkScroll
                     to="hero"
-                    offset={-100}
+                    offset={-250}
                     spy
                     smooth
                     className={clsx(
