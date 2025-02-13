@@ -59,7 +59,21 @@ export default function Pricing() {
                 {index === 1 && (
                   <div className="g4 absolute h-330 left-0 right-0 top-0 z-1 rounded-tl-3xl rounded-tr-3xl" />
                 )}
-                {plan.title}
+                <div
+                  className={clsx(
+                    "absolute left-0 right-0 z-2 flex items-center justify-center",
+                    index === 1 ? "-top-6" : "-top-6 xl:-top-11",
+                  )}
+                >
+                  <img
+                    src={plan.logo}
+                    alt={plan.title}
+                    className={clsx(
+                      "object-contain drop-shadow-2xl",
+                      index === 1 ? "size-[120px]" : "size-[88px]",
+                    )}
+                  />
+                </div>
               </div>
             ))}
           </div>
