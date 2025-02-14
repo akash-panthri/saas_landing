@@ -105,7 +105,18 @@ export default function Pricing() {
                         preserveValue
                       />
                     </div>
+                    <div className="small-1 relative top-3 ml-1 uppercase">
+                      / mo
+                    </div>
                   </div>
+                </div>
+                <div
+                  className={clsx(
+                    "body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4",
+                    index === 1 && "border-b",
+                  )}
+                >
+                  {plan.caption}
                 </div>
               </div>
             ))}
