@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { useState } from "react";
 import { Element } from "react-scroll";
+import CountUp from "react-countup";
 import { plans } from "../components/constants";
 
 export default function Pricing() {
@@ -87,6 +88,23 @@ export default function Pricing() {
                     )}
                   >
                     {plan.title}
+                  </div>
+                  <div className="relative z-2 flex items-center justify-center">
+                    <div
+                      className={clsx(
+                        "h-num flex items-start",
+                        index === 1 ? "text-p3" : "text-p4"
+                      )}
+                    >
+                       ${" "}
+                      <CountUp
+                        start={plan.priceMonthly}
+                        end={monthly ? plan.priceMonthly : plan.priceYearly}
+                        duration={0.4}
+                        useEasing={false}
+                        preserveValue
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
