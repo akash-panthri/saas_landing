@@ -62,7 +62,7 @@ export default function Pricing() {
                 <div
                   className={clsx(
                     "absolute left-0 right-0 z-2 flex items-center justify-center",
-                    index === 1 ? "-top-6" : "-top-6 xl:-top-11",
+                    index === 1 ? "-top-6" : "-top-6 xl:-top-11"
                   )}
                 >
                   <img
@@ -70,9 +70,24 @@ export default function Pricing() {
                     alt={plan.title}
                     className={clsx(
                       "object-contain drop-shadow-2xl",
-                      index === 1 ? "size-[120px]" : "size-[88px]",
+                      index === 1 ? "size-[120px]" : "size-[88px]"
                     )}
                   />
+                </div>
+                <div
+                  className={clsx(
+                    "relative flex flex-col items-center",
+                    index === 1 ? "pt-24" : "pt-12"
+                  )}
+                >
+                  <div
+                    className={clsx(
+                      "small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercase",
+                      index === 1 ? "border-p3 text-p3" : "border-p1 text-p1"
+                    )}
+                  >
+                    {plan.title}
+                  </div>
                 </div>
               </div>
             ))}
