@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Element } from "react-scroll";
 import CountUp from "react-countup";
 import { plans } from "../components/constants";
+import Button from "../components/Button";
 
 export default function Pricing() {
   const [monthly, setMonthly] = useState(false);
@@ -133,6 +134,9 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-10 flex w-full justify-center">
+                  <Button icon={plan.icon}>Get Started</Button>
+                </div>
               </div>
             ))}
           </div>
