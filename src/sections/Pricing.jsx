@@ -97,7 +97,7 @@ export default function Pricing() {
                         index === 1 ? "text-p3" : "text-p4"
                       )}
                     >
-                       ${" "}
+                      ${" "}
                       <CountUp
                         start={plan.priceMonthly}
                         end={monthly ? plan.priceMonthly : plan.priceYearly}
@@ -114,7 +114,7 @@ export default function Pricing() {
                 <div
                   className={clsx(
                     "body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4",
-                    index === 1 && "border-b",
+                    index === 1 && "border-b"
                   )}
                 >
                   {plan.caption}
@@ -137,6 +137,11 @@ export default function Pricing() {
                 <div className="mt-10 flex w-full justify-center">
                   <Button icon={plan.icon}>Get Started</Button>
                 </div>
+                {index === 1 && (
+                  <p className="small-compact mt-9 text-center text-p3 before:mx-2.5 before:content-['-'] after:mx-2.5 after:content-['-']">
+                    Limited time offer
+                  </p>
+                )}
               </div>
             ))}
           </div>
