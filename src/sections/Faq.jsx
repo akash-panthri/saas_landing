@@ -1,6 +1,8 @@
 import { Element } from "react-scroll";
+import { faq } from "../components/constants";
 
 export default function Faq() {
+    const halfLength = Math.floor(faq.length / 2);
   return (
     <section>
       <Element name="faq" className="relative"></Element>
@@ -20,6 +22,11 @@ export default function Faq() {
           <div className="rounded-half absolute -top-10 left-[calc(50%-40px)] z-4 flex size-20 items-center justify-center border-2 border-s2 bg-s1">
             <img src="/images/faq-logo.svg" alt="logo" className="size-1/2" />
           </div>
+          <div className="relative flex-1 pt-24">
+              {faq.slice(0, halfLength).map((item, index) => (
+                <div key={item.id}  >{item.question}</div>
+              ))}
+            </div>
         </div>
       </div>
     </section>
