@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import { details, features } from "../components/constants";
+import { details, features } from "../constants/index.jsx";
 import Button from "../components/Button";
 
 export default function Features() {
