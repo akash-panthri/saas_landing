@@ -1,4 +1,5 @@
 import { testimonials } from "../constants";
+import TestimonialItem from "./TestimonialItem";
 
 export default function Testimonials() {
   const halfLength = Math.floor(testimonials.length / 2);
@@ -12,7 +13,11 @@ export default function Testimonials() {
         <div className="testimonials_inner-after testimonials_inner-before relative -my-12 -mr-3 flex items-start max-lg:static max-md:block">
           <div className="testimonials_group-after flex-50">
             {testimonials.slice(0, halfLength).map((testimonial) => (
-              <div key={testimonial.id}>{testimonial.name}</div>
+                <TestimonialItem
+                key={testimonial.id}
+                item={testimonial}
+                containerClassName="last:after:hidden last:after:max-md:block"
+              />
             ))}
           </div>
         </div>
